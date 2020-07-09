@@ -1,3 +1,5 @@
+import pandas as pd
+
 def formato_tabla(filename):
     xls = pd.ExcelFile(filename)
     hojas = xls.sheet_names
