@@ -15,7 +15,7 @@ def formato_tabla(filename):
         col_names = [{'header': col_name} for col_name in df.columns]
         ws.add_table(0, 0, df.shape[0], df.shape[1]-1, {'columns': col_names})
         longitudes_campos = [max([len(row) for row in df[df.columns[y]]]) for y in range(len(df.columns))]
-        longitudes_nombres = [len(col) for col in df.columns]
+        longitudes_nombres = [len(col)+4 for col in df.columns]
         longitudes_max = list(zip(longitudes_campos, longitudes_nombres))
         longitudes_finales = [max(i) for i in longitudes_max]
         for z, width in enumerate(longitudes_finales):
